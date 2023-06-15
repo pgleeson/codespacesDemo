@@ -17,6 +17,8 @@ RUN apt-get install -y vim wget cmake python3-all-dev
 RUN apt-get install -y unzip libncurses-dev
 RUN apt-get install -y libgsl-dev
 
+RUN pip3 install pyneuroml
+
 
 # Some aliases
 
