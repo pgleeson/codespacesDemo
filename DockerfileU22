@@ -1,0 +1,25 @@
+#
+# A Docker image for Ubuntu + essentials
+#
+
+FROM ubuntu:22.04
+MAINTAINER p.gleeson@gmail.com
+
+USER root
+
+RUN apt-get update
+RUN apt-get install -y default-jdk python3-tk python3-lxml maven ipython3
+RUN apt-get install -y git
+RUN apt-get install -y htop
+RUN apt-get install -y python3-matplotlib
+RUN apt-get install -y python3-pip
+RUN apt-get install -y vim wget cmake python3-all-dev
+RUN apt-get install -y unzip libncurses-dev
+RUN apt-get install -y libgsl-dev
+
+
+# Some aliases
+
+RUN echo '\n\nalias cd..="cd .."\nalias h=history\nalias ll="ls -alt"\nalias python=python3\nalias ipython=ipython3\nalias pip=pip3' >> ~/.bashrc
+
+RUN echo "Built the Docker image!"
